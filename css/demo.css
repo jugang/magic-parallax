@@ -1,0 +1,44 @@
+body {
+	background: #F1F3F4;
+	padding: 0;
+	margin: 0;
+}
+
+.stage {
+	display: flex;
+	flex-direction: column;
+}
+
+.scene {
+	position: relative;
+}
+
+h1 {
+	font-family: HelveticaNeue-Light;
+	font-size: 72px;
+	color: #41484C;
+	font-weight: 200;
+	text-align: center;
+}
+
+.shape {
+	position: absolute;
+	transform-origin: 50% 50%;
+	top: 0;
+	left: 0;
+	opacity: 0.8
+	/*border-radius: 300px;*/
+}
+
+.big {
+	width: 300px;
+	height: 300px;
+}
+.med {
+	width: 200px;
+	height: 200px;
+}
+.small {
+	width: 100px;
+	height: 100px;
+}

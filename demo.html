@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/magic-parallax.js"></script>
+		<link rel="stylesheet" href="css/demo.css" />
+	</head>
+	<body>
+
+		<div class="stage" id="stage">
+			<div class="scene">
+				<h1
+					data-parallax 			= "true"
+					data-parallax-start-x 	= "0.5"
+					data-parallax-end-x   	= "0.5"
+					data-parallax-start-y 	= "0.5"
+					data-parallax-end-y	  	= "0.9"
+					data-parallax-mid-x		= "0.5"
+					data-parallax-mid-y		= "0.5">Hello World</h1>
+
+				<img src="svg/circle.svg"
+					class = "shape med"
+					data-parallax = "true"
+					data-parallax-start-x = "0.2"
+					data-parallax-end-x = "0.2"
+					data-parallax-start-y = "0.5"
+					data-parallax-end-y = "2"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+				/>
+
+				<img src="svg/triangle.svg"
+					class = "shape big"
+					data-parallax = "true"
+					data-parallax-start-x = "0.75"
+					data-parallax-end-x = "0.75"
+					data-parallax-start-y = "1"
+					data-parallax-end-y = "0"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+				/>
+
+				<img src="svg/square.svg"
+					class = "shape small"
+					data-parallax = "true"
+					data-parallax-start-x = "0.85"
+					data-parallax-end-x = "0.85"
+					data-parallax-start-y = "0"
+					data-parallax-end-y = "1.5"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+					data-parallax-limit = "true"
+				/>
+			</div>
+
+			<div class="scene">
+				<h1
+					data-parallax 			= "true"
+					data-parallax-start-x 	= "0.5"
+					data-parallax-end-x   	= "0.5"
+					data-parallax-start-y 	= "0.5"
+					data-parallax-end-y	  	= "0.9"
+					data-parallax-mid-x		= "0.5"
+					data-parallax-mid-y		= "0.5">You're looking beautiful today</h1>
+
+				<img src="svg/circle.svg"
+					class = "shape big"
+					data-parallax = "true"
+					data-parallax-start-x = "0.25"
+					data-parallax-end-x = "0.25"
+					data-parallax-start-y = "0.25"
+					data-parallax-end-y = "0.25"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+				/>
+
+				<img src="svg/triangle.svg"
+					class = "shape big"
+					data-parallax = "small"
+					data-parallax-start-x = "0.75"
+					data-parallax-end-x = "0.75"
+					data-parallax-start-y = "1"
+					data-parallax-end-y = "0"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+				/>
+
+				<img src="svg/square.svg"
+					class = "shape med"
+					data-parallax = "true"
+					data-parallax-start-x = "0.5"
+					data-parallax-end-x = "0.5"
+					data-parallax-start-y = "0"
+					data-parallax-end-y = "1.5"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+					data-parallax-limit = "true"
+				/>
+			</div>
+
+			<div class="scene">
+				<h1
+					data-parallax 			= "true"
+					data-parallax-start-x 	= "0.5"
+					data-parallax-end-x   	= "0.5"
+					data-parallax-start-y 	= "0.5"
+					data-parallax-end-y	  	= "0.9"
+					data-parallax-mid-x		= "0.5"
+					data-parallax-mid-y		= "0.5">Good Bye</h1>
+
+				<img src="svg/circle.svg"
+					class = "shape med"
+					data-parallax = "true"
+					data-parallax-start-x = "0.2"
+					data-parallax-end-x = "0.2"
+					data-parallax-start-y = "0.5"
+					data-parallax-end-y = "2"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+				/>
+
+				<img src="svg/triangle.svg"
+					class = "shape big"
+					data-parallax = "true"
+					data-parallax-start-x = "0.75"
+					data-parallax-end-x = "0.75"
+					data-parallax-start-y = "1"
+					data-parallax-end-y = "0"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+				/>
+
+				<img src="svg/square.svg"
+					class = "shape small"
+					data-parallax = "true"
+					data-parallax-start-x = "0.85"
+					data-parallax-end-x = "0.85"
+					data-parallax-start-y = "0"
+					data-parallax-end-y = "1.5"
+					data-parallax-mid-x = "0.5"
+					data-parallax-mid-y = "0.5"
+					data-parallax-limit = "true"
+				/>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		document.addEventListener('readystatechange', function() {
+    		if (document.readyState === "complete") {
+    			// Initiate parallax
+    			var p = new Parallax();
+    			p.init();
+    		}
+  		});
+		</script>
+	</body>
+</html>
