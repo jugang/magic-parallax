@@ -1,20 +1,5 @@
 Parallax = function(){}
 
-Element.prototype.parallax = function(properties) {
-
-	d = this.dataset;
-
-	d.parallax			= "true";
-	d.parallaxStartX	= properties.startX 	|| d.parallaxStartX 	|| 0;
-	d.parallaxEndX 		= properties.endX 		|| d.parallaxEndX   	|| 0;
-	d.parallaxStartY	= properties.startY 	|| d.parallaxStartY		|| 0;
-	d.parallaxEndY 		= properties.endY 		|| d.parallaxEndY		|| 0;
-	d.parallaxLimit		= properties.limit  	|| d.parallaxLimit		|| false;
-	d.parallaxMidX		= properties.midX		|| d.parallaxMidX		|| 0;
-	d.parallaxMidY		= properties.midY		|| d.parallaxMidY		|| 0;
-	d.parallaxRotation  = properties.rotation   || d.parallaxRotation	|| 0;
-}
-
 Parallax.prototype = {
 	parallaxElements: [],
 	//
@@ -151,4 +136,19 @@ Parallax.prototype = {
 	getLimiter: function (obj) {
 		return obj.dataset.parallaxLimit == "true" ? true : false
 	},
+}
+
+Element.prototype.parallax = function(properties) {
+
+	d = this.dataset;
+
+	d.parallax			= "true";
+	d.parallaxStartX	= properties.startX 	|| d.parallaxStartX 	|| 0;
+	d.parallaxEndX 		= properties.endX 		|| d.parallaxEndX   	|| 0;
+	d.parallaxStartY	= properties.startY 	|| d.parallaxStartY		|| 0;
+	d.parallaxEndY 		= properties.endY 		|| d.parallaxEndY		|| 0;
+	d.parallaxLimit		= properties.limit  	|| d.parallaxLimit		|| false;
+	d.parallaxMidX		= properties.midX		|| d.parallaxMidX		|| 0;
+	d.parallaxMidY		= properties.midY		|| d.parallaxMidY		|| 0;
+	d.parallaxRotation  = properties.rotation   || d.parallaxRotation	|| 0;
 }
