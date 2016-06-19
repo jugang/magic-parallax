@@ -69,7 +69,6 @@ Parallax.prototype = {
 	//
 	magic: function(obj) {
 		var p = this;
-		obj.style.transform = "translateZ(0) " // Attempt at enabling hardware accelleration 
 
 		var parent = obj.parentElement
 		var relativeLocation = -parent.getBoundingClientRect().top
