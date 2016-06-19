@@ -16,6 +16,7 @@ Parallax.prototype = {
 		for (var i=0; i < allElements.length; i++) {
 			var obj = allElements[i]
 			if (obj.dataset.parallax) {
+				obj.parallax({})
 				p.parallaxElements.push(obj)
 				p.magic(obj)
 			}
@@ -41,9 +42,6 @@ Parallax.prototype = {
 		}
 		onFrameUpdate()
 
-		// if (window.requestAnimationFrame) {
-			
-		// }
 		// window.addEventListener("scroll", function() {
 		// 	var length = p.parallaxElements.length
 		// 	for (var i=0; i < length; i++) {
@@ -178,4 +176,6 @@ Element.prototype.parallax = function(properties) {
 	d.midX		= properties.midX		|| d.midX		|| 0;
 	d.midY		= properties.midY		|| d.midY		|| 0;
 	d.rotation  = properties.rotation   || d.rotation	|| 0;
+
+	this.style.position = "absolute"
 }
