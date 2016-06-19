@@ -137,6 +137,7 @@ Parallax.prototype = {
 		var toLow = rangeB[0]
 		var toHigh = rangeB[1]
 		var result = toLow + (((value - fromLow) / (fromHigh - fromLow)) * (toHigh - toLow))
+
 		if (limit == true) {
 			if (toLow < toHigh) {
 				if (result < toLow) { return toLow; }
@@ -168,14 +169,14 @@ Element.prototype.parallax = function(properties) {
 	d = this.dataset;
 
 	d.parallax	= "true";
-	d.startX	= properties.startX 	|| d.startX 	|| 0;
-	d.endX 		= properties.endX 		|| d.endX   	|| 0;
-	d.startY	= properties.startY 	|| d.startY		|| 0;
-	d.endY 		= properties.endY 		|| d.endY		|| 0;
-	d.limit		= properties.limit  	|| d.limit		|| false;
+	d.startX	= properties.startX		|| d.startX		|| 0;
+	d.endX 		= properties.endX		|| d.endX		|| 0;
+	d.startY	= properties.startY		|| d.startY		|| 0;
+	d.endY 		= properties.endY		|| d.endY		|| 0;
+	d.limit		= properties.limit		|| d.limit		|| false;
 	d.midX		= properties.midX		|| d.midX		|| 0;
 	d.midY		= properties.midY		|| d.midY		|| 0;
-	d.rotation  = properties.rotation   || d.rotation	|| 0;
+	d.rotation	= properties.rotation	|| d.rotation	|| 0;
 
 	this.style.position = "absolute"
 }

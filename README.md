@@ -1,6 +1,6 @@
 # Welcome
 
-Readme coming soon
+Readme is WIP
 
 ---
 
