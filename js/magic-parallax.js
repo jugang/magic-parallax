@@ -62,13 +62,13 @@ Parallax.prototype = {
 		//
 		// X path calculation
 		//
-		if (obj.dataset.parallaxStartX && obj.dataset.parallaxEndX) {
-			var startX = obj.dataset.parallaxStartX
-			var endX   = obj.dataset.parallaxEndX
+		if (obj.dataset.startX && obj.dataset.endX) {
+			var startX = obj.dataset.startX
+			var endX   = obj.dataset.endX
 			var value = p.modulate(relativeLocation, [0, parent.clientHeight], [p.convertPosition(startX, parent.clientWidth), p.convertPosition(endX, parent.clientWidth)], p.getLimiter(obj))
 
-			if (obj.dataset.parallaxMidX) {
-				value -= p.convertMidpoint(obj.dataset.parallaxMidX, obj.clientWidth)
+			if (obj.dataset.midX) {
+				value -= p.convertMidpoint(obj.dataset.midX, obj.clientWidth)
 			}
 
 			tx = value
@@ -79,13 +79,13 @@ Parallax.prototype = {
 		//
 		// Y path calculation
 		//
-		if (obj.dataset.parallaxStartY && obj.dataset.parallaxEndY) {
-			var startY = obj.dataset.parallaxStartY
-			var endY   = obj.dataset.parallaxEndY
+		if (obj.dataset.startY && obj.dataset.endY) {
+			var startY = obj.dataset.startY
+			var endY   = obj.dataset.endY
 			var value = p.modulate(relativeLocation, [0, parent.clientHeight], [p.convertPosition(startY, parent.clientHeight), p.convertPosition(endY, parent.clientHeight)], p.getLimiter(obj))
 
-			if (obj.dataset.parallaxMidY) {
-				value -= p.convertMidpoint(obj.dataset.parallaxMidY, obj.clientHeight)
+			if (obj.dataset.midY) {
+				value -= p.convertMidpoint(obj.dataset.midY, obj.clientHeight)
 			}
 
 			ty = value
@@ -97,9 +97,9 @@ Parallax.prototype = {
 		//	Scale calculation
 		//	TODO: This doesn't work currently :\
 		//
-		if (obj.dataset.parallaxScaleStart && obj.dataset.parallaxScaleEnd) {
-			var startS = obj.dataset.parallaxScaleStart
-			var endS   = obj.dataset.parallaxScaleEnd
+		if (obj.dataset.scaleStart && obj.dataset.scaleEnd) {
+			var startS = obj.dataset.scaleStart
+			var endS   = obj.dataset.scaleEnd
 			var value = p.modulate(relativeLocation, [0, parent.clientHeight], [startS, endS], true) // TODO: Fix this because for some reason it's broken...
 			obj.style.transform += "scale("+value+") "
 		}
@@ -140,7 +140,7 @@ Parallax.prototype = {
 		return midpoint*size
 	},
 	getLimiter: function (obj) {
-		return obj.dataset.parallaxLimit == "true" ? true : false
+		return obj.dataset.limit == "true" ? true : false
 	},
 	configureTransforms: function(tx, ty, tz) {
 		var translate3d = "translate3d("+tx+"px, "+ty+"px, "+tz+"px)"
@@ -152,13 +152,13 @@ Element.prototype.parallax = function(properties) {
 
 	d = this.dataset;
 
-	d.parallax			= "true";
-	d.parallaxStartX	= properties.startX 	|| d.parallaxStartX 	|| 0;
-	d.parallaxEndX 		= properties.endX 		|| d.parallaxEndX   	|| 0;
-	d.parallaxStartY	= properties.startY 	|| d.parallaxStartY		|| 0;
-	d.parallaxEndY 		= properties.endY 		|| d.parallaxEndY		|| 0;
-	d.parallaxLimit		= properties.limit  	|| d.parallaxLimit		|| false;
-	d.parallaxMidX		= properties.midX		|| d.parallaxMidX		|| 0;
-	d.parallaxMidY		= properties.midY		|| d.parallaxMidY		|| 0;
-	d.parallaxRotation  = properties.rotation   || d.parallaxRotation	|| 0;
+	d.parallax	= "true";
+	d.startX	= properties.startX 	|| d.startX 	|| 0;
+	d.endX 		= properties.endX 		|| d.endX   	|| 0;
+	d.startY	= properties.startY 	|| d.startY		|| 0;
+	d.endY 		= properties.endY 		|| d.endY		|| 0;
+	d.limit		= properties.limit  	|| d.limit		|| false;
+	d.midX		= properties.midX		|| d.midX		|| 0;
+	d.midY		= properties.midY		|| d.midY		|| 0;
+	d.rotation  = properties.rotation   || d.rotation	|| 0;
 }
