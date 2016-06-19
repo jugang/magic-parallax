@@ -23,13 +23,34 @@ Parallax.prototype = {
 		//
 		//	Set the scroll listener
 		//
-		window.addEventListener("scroll", function() {
-			var length = p.parallaxElements.length
+		var frame = window.requestAnimationFrame,
+			lastPos = -1,
+			length = p.parallaxElements.length
+		function onFrameUpdate() {
+			if (lastPos == window.pageYOffset) {
+				frame(onFrameUpdate)
+				return false
+			} else lastPos = window.pageYOffset
+
 			for (var i=0; i < length; i++) {
 				var obj = p.parallaxElements[i]
 				p.magic(obj)
 			}
-		});
+
+			frame(onFrameUpdate)
+		}
+		onFrameUpdate()
+
+		// if (window.requestAnimationFrame) {
+			
+		// }
+		// window.addEventListener("scroll", function() {
+		// 	var length = p.parallaxElements.length
+		// 	for (var i=0; i < length; i++) {
+		// 		var obj = p.parallaxElements[i]
+		// 		p.magic(obj)
+		// 	}
+		// });
 	},
 
 	//
@@ -72,8 +93,6 @@ Parallax.prototype = {
 			}
 
 			tx = value
-		} else {
-			console.log("Must set a start and stop X path")
 		}
 
 		//
@@ -89,8 +108,6 @@ Parallax.prototype = {
 			}
 
 			ty = value
-		} else {
-			console.log("Must set a start and stop Y path")
 		}
 
 		//
