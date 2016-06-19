@@ -12,6 +12,12 @@ The position of elements are relative to the window's current scroll position, a
 
 ![How it works](http://i.imgur.com/51F0SSH.png)
 
+# Known Issues
+
+* Performance is really poor currently
+* Only works for translations
+* Doesn't account for existing transforms on elements
+
 # Initialize
 ```javascript
 <script type="text/javascript">
