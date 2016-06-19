@@ -16,7 +16,7 @@ The position of elements are relative to the window's current scroll position, a
 
 * Performance is really poor currently
 * Only works for translations
-* Doesn't account for existing transforms on elements
+* Doesn't account for existing transforms on elementsm
 
 # Initialize
 ```javascript
@@ -45,23 +45,21 @@ mid-y
 
 # Start and Stop positioning
 Setting the value to `"0.5"` will set the element to the center of it's container. `"0"` will position it on the absolute left and `"1"` will set it to the absolute right. 
-```javascript
+```html
 <div
     data-parallax         = "true"
     data-parallax-start-x = "0.5"
-    data-parallax-start-y = "0.5"
-></div>
+    data-parallax-start-y = "0.5"></div>
 ```
 
 # Movement
 To set a movement to an element, you must specify a `start` and `end` property to either coordinate
-```javascript
+```html
 <div
     data-parallax			= "true"
     data-parallax-start-x	= "0"
     data-parallax-start-y	= "0"
     data-parallax-end-x		="1"
-    data-parallax-end-y		= "1"
-></div>
+    data-parallax-end-y		= "1"></div>
 ```
 The above element will move from the top-left corner `(0,0)` to the bottom-right `(1,1)`
